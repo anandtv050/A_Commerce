@@ -24,29 +24,24 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder(
       future: _initialization,
-      builder: (Context,snapshot) {
+      builder: (Context, snapshot) {
         //IF snapshot has error
-        if(snapshot.hasError){
-          return  Scaffold(
-            body:Center(
-              child: Text("Error:${snapshot.error}"),
-            )
-          );
+        if (snapshot.hasError) {
+          return Scaffold(
+              body: Center(
+            child: Text("Error:${snapshot.error}"),
+          ));
         }
-       if (snapshot.connectionState ==ConnectionState.done){
-         return Scaffold(
-             body:Container(
-                 child:Center(
-                     child:Text("Firebase App initialized")
-                 )
-             )
-         );
-       }
-       return Scaffold(
-         body: Center(
-           child: Text("Initialization App..."),
-         ),
-       );
+        if (snapshot.connectionState == ConnectionState.done) {
+          return Scaffold(
+              body: Container(
+                  child: Center(child: Text("Firebase App initialized"))));
+        }
+        return Scaffold(
+          body: Center(
+            child: Text("Initialization App..."),
+          ),
+        );
       },
     );
   }

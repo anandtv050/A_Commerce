@@ -19,7 +19,7 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   # Firebase Dependencies
-  firebase_core: "^0.7.0"
+  firebase_core: any
 
 
 dev_dependencies:
